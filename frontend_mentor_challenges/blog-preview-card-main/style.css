@@ -108,16 +108,21 @@ body {
   place-content: center;
   height: 100%;
   width: 100%;
-  background-color: yellow;
+  background-color: hsl(47, 88%, 63%);
 }
 
 .card-wrapper {
   background-color: white;
-  min-height: 650px;
+  min-height: 625px;
   width: 450px;
   box-shadow: 10px 10px;
   border: 1px solid black;
   border-radius: 10px;
+}
+
+.card-wrapper:hover {
+  box-shadow: 15px 15px;
+  cursor: pointer;
 }
 
 .card-items {
@@ -134,7 +139,7 @@ body {
 }
 
 .learning {
-  background-color: yellow;
+  background-color: hsl(47, 88%, 63%);
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 3px;
@@ -159,7 +164,8 @@ body {
 }
 
 .description {
-  color: gray;
+  color: hsl(0, 0%, 50%);
+  font-size: 16px;
 }
 
 .image-wrapper > img {
@@ -176,4 +182,9 @@ body {
 .title {
   font-size: 1.7rem;
   font-weight: 800;
+}
+
+.title:hover {
+  color: #f5d04e;
+  cursor: pointer;
 }
