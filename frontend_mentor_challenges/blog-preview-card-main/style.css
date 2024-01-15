@@ -113,7 +113,7 @@ body {
 
 .card-wrapper {
   background-color: white;
-  min-height: 625px;
+  height: 625px;
   width: 450px;
   box-shadow: 10px 10px;
   border: 1px solid black;
@@ -187,4 +187,19 @@ body {
 .title:hover {
   color: #f5d04e;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    height: 90svh;
+  }
+  .card-wrapper {
+    max-width: 300px;
+    max-height: 500px;
+  }
+
+  .learning {
+    width: 43%;
+    font-size: 1rem;
+  }
 }
