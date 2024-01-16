@@ -189,13 +189,28 @@ body {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 520px) {
   body {
-    height: 90svh;
+    height: 95svh;
   }
   .card-wrapper {
-    max-width: 300px;
+    max-height: 550px;
+    max-width: 350px;
+  }
+
+  .learning {
+    width: 43%;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    height: 95svh;
+  }
+  .card-wrapper {
     max-height: 500px;
+    max-width: 300px;
   }
 
   .learning {
