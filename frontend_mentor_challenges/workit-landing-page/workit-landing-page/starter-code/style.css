@@ -120,6 +120,11 @@ header {
   height: 32px;
 }
 
+.apply:hover {
+  color: #44ffa1;
+  cursor: pointer;
+}
+
 .title {
   /* border: 2px solid white; */
   margin-top: 63px;
@@ -174,6 +179,7 @@ header {
   background-color: #24053e;
   color: #44ffa1;
   border: 1px solid #44ffa1;
+  cursor: pointer;
 }
 
 .bg-pattern-1 {
@@ -281,4 +287,100 @@ header {
   font-size: 18px;
   line-height: 32px;
   padding-right: 20px;
+}
+
+.founder {
+  /* border: 2px dashed red; */
+  position: relative;
+}
+
+.founder-picture {
+  /* border: 2px solid black; */
+  max-width: 450.287px;
+  max-height: 453px;
+  margin-left: 162.86px;
+}
+
+.founder-message {
+  /* border: 1px solid red; */
+  max-width: 730px;
+  max-height: 413px;
+  background-color: #24053e;
+  color: #fff;
+  position: absolute;
+  right: 165px;
+  top: 140px;
+}
+
+.message-container {
+  /* border: 2px solid white; */
+  margin: 64px;
+  height: 285px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.message-container > * {
+  /* border: 1px dashed white; */
+}
+
+.message-title {
+  font-family: "fraunces";
+  font-size: 56px;
+}
+
+.message-content {
+  font-family: "manrope";
+  font-size: 18px;
+  line-height: 32px;
+}
+
+button.apply {
+  background-color: #44ffa1;
+  width: 190px;
+  height: 61px;
+  font-family: "manrope";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  border: #24053e;
+}
+
+.apply:hover {
+  background-color: #24053e;
+  border: 1px solid #44ffa1;
+}
+
+.bg-pattern-3 {
+  position: absolute;
+  top: 262px;
+  right: 80px;
+}
+
+.gap-2 {
+  height: 220px;
+}
+
+footer {
+  /* border: 2px solid black; */
+}
+
+.logo {
+  display: grid;
+  place-content: center;
+  margin-bottom: 40px;
+}
+
+.social {
+  /* border: 2px solid red; */
+  display: grid;
+  place-content: center;
+}
+
+.social-wrapper {
+  /* border: 1px dashed red; */
+  width: 116px;
+  display: flex;
+  justify-content: space-between;
 }
