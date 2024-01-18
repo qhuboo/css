@@ -75,7 +75,7 @@ h6 {
 }
 
 body {
-  border: 2px dashed rebeccapurple;
+  /* border: 2px dashed rebeccapurple; */
   width: 1440px;
   height: 2494px;
 }
@@ -120,7 +120,7 @@ header {
   height: 32px;
 }
 
-.apply:hover {
+.apply-link:hover {
   color: #44ffa1;
   cursor: pointer;
 }
@@ -337,7 +337,7 @@ header {
   line-height: 32px;
 }
 
-button.apply {
+.apply-button {
   background-color: #44ffa1;
   width: 190px;
   height: 61px;
@@ -348,9 +348,11 @@ button.apply {
   border: #24053e;
 }
 
-.apply:hover {
+.apply-button:hover {
   background-color: #24053e;
   border: 1px solid #44ffa1;
+  color: #44ffa1;
+  cursor: pointer;
 }
 
 .bg-pattern-3 {
@@ -384,4 +386,10 @@ footer {
   width: 116px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.svg-icon path:hover {
+  fill: black;
+  cursor: pointer;
 }
