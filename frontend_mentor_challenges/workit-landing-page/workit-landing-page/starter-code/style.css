@@ -70,12 +70,14 @@ h6 {
 
 body {
   /* border: 2px dashed rebeccapurple; */
+  max-width: 1440px;
 }
 
 header {
   /* border: 2px solid red; */
   position: relative;
   background-color: #24053e;
+  min-width: 1440px;
   height: 730px;
 }
 
