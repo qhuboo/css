@@ -69,7 +69,7 @@ h6 {
 /* ******************************* FONTS ********************************************************* */
 
 .container {
-  width: 95%;
+  width: 100%;
   max-width: 1440px;
   margin: auto;
 }
@@ -83,7 +83,7 @@ body {
 header {
   /* border: 2px solid red; */
   position: relative;
-  background-image: url(./assets/images/first_curve.svg);
+  background-color: #24053e;
   max-width: 1440px;
   height: 730px;
   overflow: hidden;
@@ -213,24 +213,17 @@ header {
 }
 
 .features-wrapper {
-  /* border: 1px solid red; */
-  background-image: url(./assets/images/second_curve.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center -30px;
+  /* border: 3px solid red; */
+  background-color: #fcf8ff;
   margin-top: -200px;
   width: 100%;
   height: 960px;
   margin-bottom: 70px;
 }
 
-.gap {
-  /* border: 2px solid blue; */
-  height: 450px;
-}
-
 .features-container {
   /* border: 2px solid purple; */
+  padding-top: 450px;
   display: grid;
   place-content: center;
 }
@@ -361,12 +354,9 @@ header {
   right: 80px;
 }
 
-.gap-2 {
-  height: 220px;
-}
-
 footer {
   /* border: 2px solid black; */
+  padding-top: 220px;
 }
 
 .logo {
