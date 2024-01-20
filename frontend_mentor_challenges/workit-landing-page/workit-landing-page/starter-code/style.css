@@ -199,10 +199,10 @@ header {
 }
 
 .phone {
-  /* border: 6px dashed purple; */
+  border: 6px dashed purple;
   display: grid;
   place-content: center;
-  height: 0;
+  max-height: 0;
 }
 
 .phone > img {
