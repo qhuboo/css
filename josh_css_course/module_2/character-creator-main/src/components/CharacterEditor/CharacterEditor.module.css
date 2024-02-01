@@ -27,20 +27,15 @@
 }
 
 .characterWrapper {
-  width: 50%;
   position: fixed;
-  top: 128px;
-  left: 50%;
-}
-
-.characterWrapper > * {
+  top: 15%;
+  left: 60%;
+  bottom: 5%;
   min-height: 500px;
-  max-height: 1000px;
 }
 
 .controlColumn {
-  max-width: 40%;
-  display: inline-block;
+  width: 50%;
 }
 
 main {
