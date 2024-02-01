@@ -4,10 +4,12 @@
 }
 
 .maxWidthWrapper {
+  position: relative;
 }
 
 .header {
   padding-bottom: 64px;
+  max-width: 65%;
 }
 
 .title {
@@ -16,6 +18,7 @@
   margin-top: 0;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
+  width: fit-content;
 }
 
 .description {
@@ -24,7 +27,27 @@
 }
 
 .characterWrapper {
+  width: 50%;
+  position: fixed;
+  top: 128px;
+  left: 50%;
+}
+
+.characterWrapper > * {
+  min-height: 500px;
+  max-height: 1000px;
 }
 
 .controlColumn {
+  max-width: 40%;
+  display: inline-block;
+}
+
+main {
+  background-image: linear-gradient(
+    to bottom,
+    hsl(180deg, 25%, 92%) 50%,
+    hsl(195deg, 20%, 86%) 50%
+  );
+  background-attachment: fixed;
 }
