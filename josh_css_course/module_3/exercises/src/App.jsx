@@ -1,4 +1,4 @@
-import "./App.css";
+import GlobalStyles from "./components/GlobalStyles/GlobalStyles";
 import "./components/FrequentlyAskedQuestion/FrequentlyAskedQuestion";
 import FrequentlyAskedQuestion from "./components/FrequentlyAskedQuestion/FrequentlyAskedQuestion";
 import LoginForm from "./components/LoginForm/LoginForm";
@@ -7,6 +7,7 @@ import ContactCard from "./components/ContactCard/ContactCard";
 function App() {
   return (
     <>
+      <GlobalStyles />
       <FrequentlyAskedQuestion
         question="What does “CSS” stand for?"
         answer="Cool Styling Strategy"
