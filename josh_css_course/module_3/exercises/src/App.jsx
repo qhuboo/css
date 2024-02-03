@@ -3,11 +3,12 @@ import "./components/FrequentlyAskedQuestion/FrequentlyAskedQuestion";
 import FrequentlyAskedQuestion from "./components/FrequentlyAskedQuestion/FrequentlyAskedQuestion";
 import LoginForm from "./components/LoginForm/LoginForm";
 import ContactCard from "./components/ContactCard/ContactCard";
+import BreadCrumb from "./components/Breadcrumbs/Breadcrumbs";
 
 function App() {
   return (
     <>
-      <GlobalStyles />
+      {/* <GlobalStyles />
       <FrequentlyAskedQuestion
         question="What does “CSS” stand for?"
         answer="Cool Styling Strategy"
@@ -17,7 +18,9 @@ function App() {
         avatarSrc="https://courses.joshwcomeau.com/cfj-mats/cat-300px.jpg"
         name="Mittens"
         email="meow@gmail.com"
-      />
+      /> */}
+
+      <BreadCrumb />
     </>
   );
 }
