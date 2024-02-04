@@ -4,11 +4,22 @@ import FrequentlyAskedQuestion from "./components/FrequentlyAskedQuestion/Freque
 import LoginForm from "./components/LoginForm/LoginForm";
 import ContactCard from "./components/ContactCard/ContactCard";
 import BreadCrumb from "./components/Breadcrumbs/Breadcrumbs";
+import ButtonTable from "./components/Button/ButtonTable";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  padding: 50px;
+  border: solid;
+
+  & > * {
+    margin-bottom: 100px;
+  }
+`;
 
 function App() {
   return (
-    <>
-      {/* <GlobalStyles />
+    <Wrapper>
+      <GlobalStyles />
       <FrequentlyAskedQuestion
         question="What does “CSS” stand for?"
         answer="Cool Styling Strategy"
@@ -18,10 +29,11 @@ function App() {
         avatarSrc="https://courses.joshwcomeau.com/cfj-mats/cat-300px.jpg"
         name="Mittens"
         email="meow@gmail.com"
-      /> */}
+      />
 
       <BreadCrumb />
-    </>
+      <ButtonTable />
+    </Wrapper>
   );
 }
 

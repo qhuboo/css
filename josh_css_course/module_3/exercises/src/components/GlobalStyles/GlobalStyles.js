@@ -30,6 +30,7 @@ Typographic tweaks!
 body {
 line-height: 1.5;
 -webkit-font-smoothing: antialiased;
+padding: 30px;
 }
 
 /*
