@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 import { COLORS } from "../../constants";
 import Icon from "../Icon";
