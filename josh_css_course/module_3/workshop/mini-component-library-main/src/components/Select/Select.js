@@ -47,15 +47,11 @@ const NewSelect = styled.div`
   padding: 12px 16px;
   border-radius: 8px;
   color: ${COLORS.gray700};
+  outline: ${(props) => props.isFocused && "1px dotted #212121"};
+  outline: ${(props) => props.isFocused && "5px auto -webkit-focus-ring-color"};
 
   &:hover {
     color: black;
-  }
-
-  & {
-    outline: ${(props) => props.isFocused && "1px dotted #212121"};
-    outline: ${(props) =>
-      props.isFocused && "5px auto -webkit-focus-ring-color"};
   }
 `;
 
