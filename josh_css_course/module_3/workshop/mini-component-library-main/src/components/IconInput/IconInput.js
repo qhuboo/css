@@ -1,17 +1,24 @@
 import { useState } from "react";
 import styled from "styled-components";
-import GlobalStyles from "../GlobalStyles/GlobalStyles";
 import { COLORS } from "../../constants";
 
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
 
+// There are still some issues with the focus outline in safari but I will fix it later, I will move on to watch the solution
+
 const STYLES = {
   small: {
     size: 16,
+    height: 24,
+    borderThickness: 1,
+    fontSize: 14,
   },
   large: {
     size: 24,
+    height: 36,
+    borderThickness: 2,
+    fontSize: 18,
   },
 };
 
@@ -20,36 +27,39 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   const styles = STYLES[size];
   console.log(styles);
   return (
-    <>
-      <GlobalStyles />
+    <InputWrapper
+      isFocused={isFocused}
+      width={width}
+      style={{ "--border-thickness": styles.borderThickness + "px" }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
 
-      <InputWrapper isFocused={isFocused} width={width}>
-        <IconWrapper>
-          <Icon
-            style={{
-              display: "inline-block",
-              verticalAlign: "baseline",
-              height: styles.size + "px",
-              width: styles.size + "px",
-            }}
-            id={icon}
-          />
-        </IconWrapper>
+      <IconWrapper
+        className="IconWrapper"
+        style={{ "--size": styles.size + "px" }}
+      >
+        <Icon className="Icon" id={icon} size={size} />
+      </IconWrapper>
 
-        <Input
-          style={{ "--size": styles.size + "px" }}
-          placeholder={placeholder}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        />
-      </InputWrapper>
-    </>
+      <Input
+        style={{
+          "--size": styles.size + "px",
+          "--height": styles.height + "px",
+          "--font-size": styles.fontSize / 16 + "rem",
+          "--border-thickness": styles.borderThickness + "px",
+        }}
+        placeholder={placeholder}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+      />
+    </InputWrapper>
   );
 };
 
 const InputWrapper = styled.div`
   width: ${(props) => props.width}px;
-  border-bottom: 1px solid black;
+  line-height: 0;
+  border-bottom: var(--border-thickness) solid black;
   position: relative;
   outline: ${(props) => props.isFocused && "1px dotted #212121"};
   outline: ${(props) => props.isFocused && "5px auto -webkit-focus-ring-color"};
@@ -61,15 +71,20 @@ const InputWrapper = styled.div`
 `;
 
 const Input = styled.input.attrs({ type: "text" })`
-  margin-left: calc(var(--size) + 8px);
+  padding-left: var(--height);
+  padding-right: 0px;
+  padding-block: 0px;
   border: none;
-  display: inline-block;
-  vertical-align: middle;
-  width: calc(100% - var(--size) -8px);
-  outline: none;
+  width: 100%;
+  height: calc(var(--height) - var(--border-thickness));
+  font-size: var(--font-size);
   color: inherit;
   font-weight: 700;
   font-family: "Roboto";
+
+  &:focus {
+    outline: none;
+  }
 
   &::placeholder {
     font-weight: initial;
@@ -77,11 +92,12 @@ const Input = styled.input.attrs({ type: "text" })`
 `;
 
 const IconWrapper = styled.div`
-  display: inline-block;
-  height: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
+  margin: auto 0;
+  width: var(--size);
+  height: var(--size);
   color: inherit;
 `;
 
