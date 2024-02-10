@@ -5,7 +5,7 @@ import { COLORS } from "../../constants";
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
 
-// There are still some issues with the focus outline in safari but I will fix it later, I will move on to watch the solution
+// There are still some issues with the focus outline in safari when including the VisuallyHidden component
 
 const STYLES = {
   small: {
@@ -33,12 +33,8 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
       style={{ "--border-thickness": styles.borderThickness + "px" }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
-
-      <IconWrapper
-        className="IconWrapper"
-        style={{ "--size": styles.size + "px" }}
-      >
-        <Icon className="Icon" id={icon} size={size} />
+      <IconWrapper style={{ "--size": styles.size + "px" }}>
+        <Icon id={icon} size={size} />
       </IconWrapper>
 
       <Input
