@@ -36,14 +36,30 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant === "new-release" ? (
+            <JustReleasedFlag>Just released!</JustReleasedFlag>
+          ) : variant === "on-sale" ? (
+            <OnSaleFlag>Sale</OnSaleFlag>
+          ) : (
+            <></>
+          )}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
-          <Price>{formatPrice(price)}</Price>
+          <Price>
+            {variant === "on-sale" ? (
+              <del>{formatPrice(price)}</del>
+            ) : (
+              <p>{formatPrice(price)}</p>
+            )}
+          </Price>
         </Row>
         <Row>
           <ColorInfo>{pluralize("Color", numOfColors)}</ColorInfo>
+          {variant === "on-sale" && (
+            <SalePrice>{formatPrice(salePrice)}</SalePrice>
+          )}
         </Row>
       </Wrapper>
     </Link>
@@ -61,10 +77,14 @@ const ImageWrapper = styled.div`
   position: relative;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 100%;
+`;
 
 const Row = styled.div`
   font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Name = styled.h3`
@@ -81,6 +101,34 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+`;
+
+const JustReleasedFlag = styled.div`
+  background-color: ${COLORS.secondary};
+  position: absolute;
+  border-radius: 2px;
+  width: fit-content;
+  top: 12px;
+  right: -2px;
+  padding: 5px;
+  color: ${COLORS.white};
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: ${14 / 16}rem;
+`;
+
+const OnSaleFlag = styled.div`
+  background-color: ${COLORS.primary};
+  position: absolute;
+  border-radius: 2px;
+  width: fit-content;
+  top: 12px;
+  right: -2px;
+  padding: 5px;
+  color: ${COLORS.white};
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: ${14 / 16}rem;
 `;
 
 export default ShoeCard;
