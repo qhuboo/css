@@ -11,14 +11,10 @@ const Header = () => {
   return (
     <header>
       <SuperHeader />
-      <MainHeader style={{ position: "relative" }}>
-        <Logo
-          style={{
-            position: "absolute",
-            left: "32px",
-            top: "12px",
-          }}
-        />
+      <MainHeader>
+        <Side>
+          <Logo />
+        </Side>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -27,13 +23,14 @@ const Header = () => {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
+        <Side />
       </MainHeader>
     </header>
   );
 };
 
 const MainHeader = styled.div`
-  padding: 32px 32px;
+  padding: 18px 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
   display: flex;
   justify-content: center;
@@ -43,6 +40,11 @@ const MainHeader = styled.div`
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
+  margin: 0 48px;
+`;
+
+const Side = styled.div`
+  flex: 1;
 `;
 
 const NavLink = styled.a`
@@ -51,7 +53,6 @@ const NavLink = styled.a`
   text-decoration: none;
   color: ${COLORS.gray[900]};
   font-weight: ${WEIGHTS.medium};
-  line-height: 0;
 
   &:first-of-type {
     color: ${COLORS.secondary};

@@ -41,17 +41,13 @@ const ShoeIndex = ({ sortId, setSortId }) => {
 };
 
 const Wrapper = styled.div`
-  // border: 3px dashed red;
   display: flex;
-
-  & > * {
-    // border: 5px dashed purple;
-  }
+  align-items: baseline;
+  gap: 32px;
 `;
 
 const LeftColumn = styled.div`
-  padding-top: 10px;
-  flex: 1;
+  flex: 0 1 248px;
 `;
 
 const MainColumn = styled.div`
@@ -59,13 +55,8 @@ const MainColumn = styled.div`
 `;
 
 const Header = styled.header`
-  // border: 3px dashed red;
   display: flex;
-  align-items: center;
-
-  // & > * {
-  //   border: 5px dashed purple;
-  // }
+  align-items: baseline;
 `;
 
 const Title = styled.h2`
