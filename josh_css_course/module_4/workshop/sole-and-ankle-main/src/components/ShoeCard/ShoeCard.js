@@ -49,7 +49,7 @@ const ShoeCard = ({
           <Name>{name}</Name>
           <Price>
             {variant === "on-sale" ? (
-              <del>{formatPrice(price)}</del>
+              <Del>{formatPrice(price)}</Del>
             ) : (
               <p>{formatPrice(price)}</p>
             )}
@@ -79,6 +79,7 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   width: 100%;
+  border-radius: 16px 16px 4px 4px;
 `;
 
 const Row = styled.div`
@@ -109,8 +110,8 @@ const JustReleasedFlag = styled.div`
   border-radius: 2px;
   width: fit-content;
   top: 12px;
-  right: -2px;
-  padding: 5px;
+  right: -4px;
+  padding: 10px;
   color: ${COLORS.white};
   font-family: "Raleway";
   font-weight: 700;
@@ -123,12 +124,15 @@ const OnSaleFlag = styled.div`
   border-radius: 2px;
   width: fit-content;
   top: 12px;
-  right: -2px;
-  padding: 5px;
+  right: -4px;
+  padding: 10px;
   color: ${COLORS.white};
   font-family: "Raleway";
   font-weight: 700;
   font-size: ${14 / 16}rem;
 `;
 
+const Del = styled.del`
+  color: ${COLORS.gray[700]};
+`;
 export default ShoeCard;
