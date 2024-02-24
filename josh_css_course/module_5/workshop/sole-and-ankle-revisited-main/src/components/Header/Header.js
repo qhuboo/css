@@ -63,6 +63,8 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  overflow-y: hidden;
+  overflow-x: auto;
 
   @media (${QUERIES.tablet}){
       display: none;
@@ -90,7 +92,7 @@ const MobileHeader = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(2rem, 9.3vw - 5.5rem, 5rem);
   margin: 0px 48px;
 `;
 
