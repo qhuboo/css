@@ -24,17 +24,13 @@ console.log(QUERIES);
 const Main = styled.main`
   padding: 64px 32px;
 
-  // @media (${QUERIES.laptop}) {
-  //   background-color: #01949a;
-  // }
+  @media (${QUERIES.tablet}) {
+    padding: 48px 32px;
+  }
 
-  // @media (${QUERIES.tablet}) {
-  //   background-color: #db1f48;
-  // }
-
-  // @media (${QUERIES.phone}) {
-  //   background-color: #145da0;
-  // }
+  @media (${QUERIES.phone}) {
+    padding: 48px 16px;
+  }
 `;
 
 export default App;

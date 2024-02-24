@@ -6,6 +6,7 @@ import Logo from "../Logo";
 import SuperHeader from "../SuperHeader";
 import MobileMenu from "../MobileMenu";
 import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -19,6 +20,9 @@ const Header = () => {
     <header>
       <SuperHeader />
       <MainHeader>
+        <Side>
+          <Logo />
+        </Side>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -31,14 +35,18 @@ const Header = () => {
       </MainHeader>
 
       <MobileHeader>
-        <Side style={{ marginRight: "auto" }}>
+        <Side>
           <Logo />
         </Side>
-        <Icon id="shopping-bag" strokeWidth={1} />
-        <Icon id="search" strokeWidth={1} />
-        <MenuButton onClick={() => setShowMobileMenu(true)}>
-          <Icon id="menu" strokeWidth={1} />
-        </MenuButton>
+        <UnstyledButton>
+          <Icon id="shopping-bag" strokeWidth={1} />
+        </UnstyledButton>
+        <UnstyledButton>
+          <Icon id="search" strokeWidth={1} />
+        </UnstyledButton>
+        <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+          <Icon id="menu" color="black" strokeWidth={1} />
+        </UnstyledButton>
       </MobileHeader>
 
       <MobileMenu
@@ -57,9 +65,7 @@ const MainHeader = styled.div`
   border-bottom: 1px solid ${COLORS.gray[300]};
 
   @media (${QUERIES.tablet}){
-    & {
       display: none;
-    }
   })
 `;
 
@@ -68,7 +74,7 @@ const MobileHeader = styled.div`
 
   @media (${QUERIES.tablet}) {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 34px;
     padding: 18px 32px;
     height: 72px;
@@ -77,13 +83,9 @@ const MobileHeader = styled.div`
 
   @media (${QUERIES.phone}) {
     gap: 17px;
-    padding: 18px 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
-`;
-
-const MenuButton = styled.button`
-  background-color: white;
-  border: none;
 `;
 
 const Nav = styled.nav`
