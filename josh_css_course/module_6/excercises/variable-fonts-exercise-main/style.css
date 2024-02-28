@@ -93,7 +93,7 @@ footer {
 
 .links a {
   text-decoration: none;
-  \font-size: 1rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--color-gray-100);
 }
