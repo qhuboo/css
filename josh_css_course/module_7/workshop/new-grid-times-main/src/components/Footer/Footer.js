@@ -1,13 +1,13 @@
-import React from 'react';
-import { Twitter, Facebook } from 'react-feather';
-import styled from 'styled-components/macro';
-import MaxWidthWrapper from '../MaxWidthWrapper';
+import React from "react";
+import { Twitter, Facebook } from "react-feather";
+import styled from "styled-components/macro";
+import MaxWidthWrapper from "../MaxWidthWrapper";
 
-import VisuallyHidden from '../VisuallyHidden';
+import VisuallyHidden from "../VisuallyHidden";
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <Wrapper style={{ border: "3px dashed yellow" }}>
       <MaxWidthWrapper>
         <TopRow>
           <nav>
@@ -25,15 +25,11 @@ const Footer = () => {
           </nav>
           <Social>
             <a href="/">
-              <VisuallyHidden>
-                Visit The Grid Times on Facebook
-              </VisuallyHidden>
+              <VisuallyHidden>Visit The Grid Times on Facebook</VisuallyHidden>
               <Facebook size={20} />
             </a>
             <a href="/">
-              <VisuallyHidden>
-                Visit The Grid Times on Twitter
-              </VisuallyHidden>
+              <VisuallyHidden>Visit The Grid Times on Twitter</VisuallyHidden>
               <Twitter size={20} />
             </a>
           </Social>
