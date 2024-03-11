@@ -46,17 +46,11 @@ const Abstract = styled.p`
   overflow: hidden;
 
   @media (${QUERIES.tabletAndUp}) {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-line-clamp: 13;
-    overflow: hidden;
   }
 
   @media (${QUERIES.desktopAndUp}) {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-line-clamp: 7;
-    overflow: hidden;
   }
 `;
 
