@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <MaxWidthWrapper style={{ border: "3px dashed purple" }} as="main">
+      <MaxWidthWrapper as="main">
         <MainStoryGrid />
         <SpecialtyStoryGrid />
       </MaxWidthWrapper>

@@ -12,7 +12,7 @@ import { QUERIES } from "../../constants";
 
 const MainStoryGrid = () => {
   return (
-    <Wrapper style={{ border: "3px dashed green" }}>
+    <Wrapper>
       <MainStorySection>
         <MainStory {...MAIN_STORY} />
       </MainStorySection>
@@ -50,6 +50,17 @@ const Wrapper = styled.div`
     "advertisement";
   gap: 48px;
   margin-bottom: 48px;
+
+  @media (${QUERIES.tabletOnly}) {
+    border: 3px solid chartreuse;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 3fr fit-content(1fr) fit-content(1fr);
+    grid-template-areas:
+      "main-story secondary-stories"
+      "advertisement advertisement"
+      "opinion-stories opinion-stories";
+    gap: 16px;
+  }
 `;
 
 const MainStorySection = styled.section`
@@ -58,13 +69,14 @@ const MainStorySection = styled.section`
 
 const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
+  border-left: 1px solid var(--color-gray-300);
 `;
 
 const StoryList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px;
+  padding: 0 16px;
 
   & > *:not(:last-child) {
     padding-bottom: 16px;

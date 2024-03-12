@@ -51,7 +51,18 @@ const Wrapper = styled.div`
 
 const MarketsSection = styled.section``;
 
-const MarketCards = styled.div``;
+const MarketCards = styled.div`
+  border: 3px solid springgreen;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px 20px;
+
+  flex-wrap: wrap;
+  & > * {
+    flex: 1;
+    min-width: 150px;
+  }
+`;
 
 const SportsSection = styled.section``;
 
