@@ -18,20 +18,20 @@ const MainStoryGrid = () => {
       </MainStorySection>
 
       <SecondaryStorySection>
-        <StoryList>
+        <SecondaryStoryList>
           {SECONDARY_STORIES.map((story, index) => (
             <SecondaryStory key={story.id} {...story} />
           ))}
-        </StoryList>
+        </SecondaryStoryList>
       </SecondaryStorySection>
 
       <OpinionSection>
         <SectionTitle>Opinion</SectionTitle>
-        <StoryList>
+        <OpinionStoryList>
           {OPINION_STORIES.map((story, index) => (
             <OpinionStory key={story.id} {...story} />
           ))}
-        </StoryList>
+        </OpinionStoryList>
       </OpinionSection>
 
       <AdvertisementSection>
@@ -52,9 +52,8 @@ const Wrapper = styled.div`
   margin-bottom: 48px;
 
   @media (${QUERIES.tabletOnly}) {
-    border: 3px solid chartreuse;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 3fr fit-content(1fr) fit-content(1fr);
+    grid-template-rows: 3fr 1fr 1fr;
     grid-template-areas:
       "main-story secondary-stories"
       "advertisement advertisement"
@@ -69,41 +68,51 @@ const MainStorySection = styled.section`
 
 const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
-  border-left: 1px solid var(--color-gray-300);
+
+  @media (${QUERIES.tabletOnly}) {
+    border-left: 1px solid var(--color-gray-300);
+  }
 `;
 
-const StoryList = styled.div`
+const SecondaryStoryList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 0 16px;
 
   & > *:not(:last-child) {
     padding-bottom: 16px;
     border-bottom: 1px solid var(--color-gray-300);
   }
+  @media (${QUERIES.tabletOnly}) {
+    padding-left: 16px;
+  }
 `;
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
+`;
 
-  & > *:first-child {
-    padding-left: 16px;
+const OpinionStoryList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  // padding: 0 16px;
+
+  & > *:not(:last-child) {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-gray-300);
   }
 
-  // We want to target the OpinionSection StoryList component since the other StoryList (child of SecondaryStorySection)
-  // does not change flex direction of its dividers.
   @media (${QUERIES.tabletOnly}) {
-    & > ${StoryList} {
-      flex-direction: row;
-    }
-    & > ${StoryList} > *:not(last-child) {
+    flex-direction: row;
+    & > *:not(:last-child) {
       border: none;
+    }
+    & > * {
       flex: 1;
     }
   }
 `;
-
 const AdvertisementSection = styled.section`
   grid-area: advertisement;
 `;
