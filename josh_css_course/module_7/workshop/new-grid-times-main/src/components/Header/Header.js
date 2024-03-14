@@ -11,7 +11,7 @@ import Button from "../Button";
 const Header = () => {
   return (
     <header>
-      <SuperHeader style={{ border: "2px dashed yellow" }}>
+      <SuperHeader>
         <Row>
           <ActionGroup>
             <button>
