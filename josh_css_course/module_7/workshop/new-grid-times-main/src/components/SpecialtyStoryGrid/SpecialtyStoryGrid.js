@@ -87,13 +87,11 @@ const SportsStories = styled.div`
   @media (${QUERIES.tabletAndUp}) {
     display: flex;
     gap: 16px;
-    white-space: nowrap;
     overflow: auto;
 
     & > * {
       flex: 1;
       min-width: 220px;
-      white-space: normal;
     }
   }
 `;
