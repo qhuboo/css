@@ -1,14 +1,33 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled, { keyframes } from "styled-components/macro";
 
-import { QUERIES, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import Icon from '../Icon';
-import UnstyledButton from '../UnstyledButton';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
-import VisuallyHidden from '../VisuallyHidden';
+import { QUERIES, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
+import VisuallyHidden from "../VisuallyHidden";
 
+const moveUp = keyframes`
+from {
+  transform: translateY(0%);
+}
+to {
+  transform: translateY(-100%);
+}
+`;
+
+const moveDown = keyframes`
+{
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+`;
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
 
@@ -20,12 +39,30 @@ const Header = () => {
           <Logo />
         </LogoWrapper>
         <DesktopNav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
+          <NavLink href="/sale">
+            <RegularLinkText>Sale</RegularLinkText>
+            <BoldLinkText>Sale</BoldLinkText>
+          </NavLink>
+          <NavLink href="/new">
+            <RegularLinkText> New&nbsp;Releases</RegularLinkText>
+            <BoldLinkText> New&nbsp;Releases</BoldLinkText>
+          </NavLink>
+          <NavLink href="/men">
+            <RegularLinkText>Men</RegularLinkText>
+            <BoldLinkText>Men</BoldLinkText>
+          </NavLink>
+          <NavLink href="/women">
+            <RegularLinkText>Women</RegularLinkText>
+            <BoldLinkText>Women</BoldLinkText>
+          </NavLink>
+          <NavLink href="/kids">
+            <RegularLinkText>Kids</RegularLinkText>
+            <BoldLinkText>Kids</BoldLinkText>
+          </NavLink>
+          <NavLink href="/collections">
+            <RegularLinkText>Collections</RegularLinkText>
+            <BoldLinkText>Collections</BoldLinkText>
+          </NavLink>
         </DesktopNav>
         <MobileActions>
           <ShoppingBagButton>
@@ -114,15 +151,39 @@ const Filler = styled.div`
   }
 `;
 
+const RegularLinkText = styled.div`
+  transition: transform 400ms;
+`;
+
+const BoldLinkText = styled.div`
+  font-weight: 800;
+  position: absolute;
+  transition: transform 400ms;
+`;
+
 const NavLink = styled.a`
+  position: relative;
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-gray-900);
   font-weight: ${WEIGHTS.medium};
+  overflow: hidden;
 
   &:first-of-type {
     color: var(--color-secondary);
+  }
+
+  &:hover {
+    & ${RegularLinkText} {
+      transition: transform 200ms;
+      transform: translateY(-100%);
+    }
+
+    & ${BoldLinkText} {
+      transition: transform 200ms;
+      transform: translateY(-100%);
+    }
   }
 `;
 
