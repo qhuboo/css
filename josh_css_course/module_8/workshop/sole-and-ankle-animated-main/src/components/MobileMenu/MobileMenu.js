@@ -85,7 +85,7 @@ const Content = styled(DialogContent)`
   padding: 24px 32px;
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: ${slideIn} 600ms both cubic-bezier(0.14, 0.56, 0.32, 1.35);
+    animation: ${slideIn} 1000ms both cubic-bezier(0.14, 0.56, 0.32, 1.35);
     animation-delay: 200ms;
   }
 `;
@@ -94,7 +94,7 @@ const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  animation: ${fadeIn} 500ms both;
+  animation: ${fadeIn} 800ms both;
   animation-delay: 500ms;
 `;
 
