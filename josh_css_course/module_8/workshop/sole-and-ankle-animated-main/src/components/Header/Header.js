@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components/macro";
+import styled from "styled-components/macro";
 
 import { QUERIES, WEIGHTS } from "../../constants";
 import Logo from "../Logo";
@@ -9,25 +9,6 @@ import SuperHeader from "../SuperHeader";
 import MobileMenu from "../MobileMenu";
 import VisuallyHidden from "../VisuallyHidden";
 
-const moveUp = keyframes`
-from {
-  transform: translateY(0%);
-}
-to {
-  transform: translateY(-100%);
-}
-`;
-
-const moveDown = keyframes`
-{
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-`;
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
 
