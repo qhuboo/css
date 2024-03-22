@@ -133,13 +133,13 @@ const Filler = styled.div`
 `;
 
 const RegularLinkText = styled.div`
-  transition: transform 400ms;
+  transition: transform 600ms;
 `;
 
 const BoldLinkText = styled.div`
   font-weight: 800;
   position: absolute;
-  transition: transform 400ms;
+  transition: transform 600ms;
 `;
 
 const NavLink = styled.a`
@@ -155,15 +155,17 @@ const NavLink = styled.a`
     color: var(--color-secondary);
   }
 
-  &:hover {
-    & ${RegularLinkText} {
-      transition: transform 200ms;
-      transform: translateY(-100%);
-    }
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      ${RegularLinkText} {
+        transition: transform 200ms;
+        transform: translateY(-100%);
+      }
 
-    & ${BoldLinkText} {
-      transition: transform 200ms;
-      transform: translateY(-100%);
+      ${BoldLinkText} {
+        transition: transform 200ms;
+        transform: translateY(-100%);
+      }
     }
   }
 `;
