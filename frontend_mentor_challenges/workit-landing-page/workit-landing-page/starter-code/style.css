@@ -75,6 +75,10 @@ h6 {
   border: 3px solid crimson;
 }
 
+body {
+  position: relative;
+}
+
 .header {
   background-color: #24053e;
   color: white;
@@ -89,6 +93,12 @@ h6 {
   margin-left: calc(40px + (60 - 40) * ((100vw - 768px) / (1440 - 768)));
   margin-right: calc(40px + (60 - 40) * ((100vw - 768px) / (1440 - 768)));
   margin-top: 60px;
+}
+
+.navigation p {
+  font-family: "manrope";
+  font-weight: 800;
+  border-bottom: 3px solid springgreen;
 }
 
 .title {
@@ -120,4 +130,18 @@ h6 {
 .learn-more button {
   padding: 16px 32px;
   background-color: springgreen;
+}
+
+.hero-image {
+  border: 3px solid springgreen;
+  position: absolute;
+  top: 450px;
+  left: 50%;
+  width: clamp(520px, 65%, 773px);
+  transform: translateX(-50%);
+}
+
+.hero-image img {
+  border: 2px dashed springgreen;
+  width: 100%;
 }
