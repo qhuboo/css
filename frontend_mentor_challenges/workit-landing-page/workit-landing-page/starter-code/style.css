@@ -215,3 +215,7 @@ body {
   font-family: "manrope";
   font-size: 18px;
 }
+
+.founder {
+  border: 2px solid crimson;
+}
