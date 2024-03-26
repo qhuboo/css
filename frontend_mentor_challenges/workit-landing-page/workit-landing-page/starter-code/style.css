@@ -185,6 +185,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  height: 280px;
 }
 
 .bullet {
@@ -195,4 +196,23 @@ body {
   align-items: center;
   text-wrap: wrap;
   text-align: center;
+  color: #24053e;
+}
+
+.bullet-number {
+  font-family: "fraunces";
+  font-size: 26px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 6px 18px;
+}
+
+.bullet-title {
+  font-family: "fraunces";
+  font-size: 32px;
+}
+
+.bullet-description {
+  font-family: "manrope";
+  font-size: 18px;
 }
