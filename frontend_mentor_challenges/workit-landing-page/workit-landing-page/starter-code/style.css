@@ -170,6 +170,8 @@ body {
 }
 
 .pattern-2 img {
+  border: 2px dashed orchid;
+
   width: 100%;
 }
 
