@@ -399,9 +399,10 @@ footer {
     margin: 32px 16px 65px;
   }
 
-  /* .title {
-    max-width: 473px;
-  } */
+  .title {
+    border: 2px solid springgreen;
+    max-width: 85%;
+  }
 
   .title h1 {
     font-size: 50px;
