@@ -68,24 +68,20 @@ h6 {
 }
 /* ******************************* FONTS ********************************************************* */
 /* ***************************** DESKTOP ******************************************************* */
+
 .maxwidth-wrapper {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  overflow-x: hidden;
-}
-
-body {
-  position: relative;
-  overflow-x: hidden;
 }
 
 .header {
   background-color: #24053e;
   color: white;
   border: 1px solid transparent;
-  overflow-x: hidden;
+  position: relative;
   min-height: 650px;
+  overflow: hidden;
 }
 
 .navigation {
@@ -159,24 +155,27 @@ body {
 .pattern-2 {
   width: 150px;
   position: absolute;
-  top: 315px;
-  right: -40px;
+  top: 350px;
+  right: -43px;
 }
 
 .pattern-2 img {
   width: 100%;
 }
 
+/* ************************** BULLET SECTION DESKTOP ************************** */
+
 .bullets {
-  margin-top: 300px;
+  /* border: 3px solid chartreuse; */
+  padding: 300px 12% 0px;
   background-color: #fcf8ff;
 }
 
 .bullet-section {
+  /* border: 3px solid chartreuse; */
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  height: 280px;
+  gap: 26px;
 }
 
 .bullet {
@@ -189,12 +188,20 @@ body {
   color: #24053e;
 }
 
+.bullet-number-wrapper {
+  display: grid;
+  place-content: center;
+}
+
 .bullet-number {
   font-family: "fraunces";
   font-size: 26px;
   border: 1px solid black;
   border-radius: 50%;
-  padding: 6px 18px;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-content: center;
 }
 
 .bullet-title {
@@ -207,12 +214,23 @@ body {
   font-size: 18px;
 }
 
-.founder {
-  border: 2px solid crimson;
+/* ************************ FOUNDER SECTION DESKTOP***************************** */
+
+.founder-wrapper {
+  /* border: 4px dashed red; */
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+  min-height: 650px;
+  margin-top: 100px;
 }
 
 .founder-picture {
-  width: 450px;
+  position: absolute;
+  width: 43%;
+  height: 43%;
+  top: 0;
+  left: 0;
 }
 
 .founder-picture img {
@@ -220,5 +238,112 @@ body {
 }
 
 .founder-message {
-  border: 3px solid teal;
+  /* border: 3px solid teal; */
+  color: white;
+  width: 66%;
+  min-width: 514px;
+  background-color: #24053e;
+  position: absolute;
+  right: 0;
+  bottom: clamp(0px, calc(-70px + 0.0908 * 100vw), 61px);
+}
+
+.founder-flex-wrapper {
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.founder-title {
+  font-family: "fraunces";
+  font-size: 56px;
+}
+
+.founder-description {
+  font-family: "manrope";
+  font-size: 18px;
+}
+
+.founder-svg {
+  position: absolute;
+  width: fit-content;
+  bottom: -80px;
+  right: 20%;
+}
+
+.founder-button {
+  width: 190px;
+  height: 61px;
+  background-color: #44ffa1;
+  border: none;
+  font-family: "manrope";
+  font-weight: bold;
+}
+
+/* ********************************** FOOTER DESKTOP **************************** */
+
+footer {
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  padding: 100px 0;
+}
+
+.socials {
+  display: flex;
+  gap: 32px;
+}
+
+/* ************************************ TABLET ******************************** */
+
+@media screen and (max-width: 1100px) {
+  .bullet-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .bullet {
+    display: grid;
+    text-align: left;
+    gap: 0px 32px;
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "number title"
+      "number description";
+  }
+
+  .bullet-number-wrapper {
+    grid-area: number;
+  }
+
+  .bullet-title {
+    grid-area: title;
+  }
+
+  .bullet-description {
+    grid-area: description;
+  }
+
+  .founder-wrapper {
+    min-height: 530px;
+  }
+
+  .founder-flex-wrapper {
+    gap: 24px;
+    padding: 56px;
+  }
+
+  .founder-title {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .founder-description {
+    font-size: 16px;
+  }
 }
