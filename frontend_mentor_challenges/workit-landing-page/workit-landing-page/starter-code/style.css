@@ -98,9 +98,9 @@ h6 {
 }
 
 .title {
+  /* border: 3px solid chartreuse; */
   margin: 0 auto;
   max-width: 635px;
-  min-height: 170px;
   margin-top: 65px;
 }
 
@@ -195,7 +195,7 @@ h6 {
 
 .bullet-number {
   font-family: "fraunces";
-  font-size: 26px;
+  font-size: 24px;
   border: 1px solid black;
   border-radius: 50%;
   width: 56px;
@@ -228,6 +228,7 @@ h6 {
 .founder-picture {
   position: absolute;
   width: 43%;
+  min-width: 281px;
   height: 43%;
   top: 0;
   left: 0;
@@ -238,7 +239,7 @@ h6 {
 }
 
 .founder-message {
-  /* border: 3px solid teal; */
+  border: 3px solid teal;
   color: white;
   width: 66%;
   min-width: 514px;
@@ -301,6 +302,28 @@ footer {
 /* ************************************ TABLET ******************************** */
 
 @media screen and (max-width: 1100px) {
+  .navigation {
+    margin: 32px 39px 65px;
+  }
+
+  .title {
+    max-width: 473px;
+  }
+
+  .title h1 {
+    font-size: 60px;
+  }
+
+  .pattern-1 {
+    top: 116px;
+    left: -180px;
+  }
+
+  .pattern-2 {
+    top: 350px;
+    right: -78px;
+  }
+
   .bullet-section {
     flex-direction: column;
     gap: 40px;
@@ -321,12 +344,20 @@ footer {
     grid-area: number;
   }
 
+  .bullet-number {
+    font-size: 20px;
+    width: 48px;
+    height: 46px;
+  }
+
   .bullet-title {
     grid-area: title;
+    font-size: 28px;
   }
 
   .bullet-description {
     grid-area: description;
+    font-size: 16px;
   }
 
   .founder-wrapper {
@@ -345,5 +376,82 @@ footer {
 
   .founder-description {
     font-size: 16px;
+  }
+  .founder-button {
+    width: 172px;
+    height: 55px;
+    background-color: #44ffa1;
+    border: none;
+    font-family: "manrope";
+    font-weight: bold;
+  }
+
+  .founder-svg {
+    bottom: -100px;
+    right: 0;
+  }
+}
+
+/* ************************************ MOBILE ******************************** */
+
+@media screen and (max-width: 600px) {
+  .navigation {
+    margin: 32px 16px 65px;
+  }
+
+  /* .title {
+    max-width: 473px;
+  } */
+
+  .title h1 {
+    font-size: 50px;
+  }
+
+  .hero-image {
+    width: clamp(250px, 80%, 85%);
+  }
+
+  .pattern-1,
+  .pattern-2,
+  .founder-svg {
+    display: none;
+  }
+
+  .bullet {
+    display: flex;
+    gap: 12px;
+  }
+
+  .founder-picture {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .founder-message {
+    min-width: 100%;
+  }
+
+  .founder-flex-wrapper {
+    align-items: center;
+    gap: 16px;
+    padding: 32px;
+  }
+
+  .founder-title {
+    font-family: "fraunces";
+    font-size: 32px;
+  }
+
+  .founder-description {
+    font-family: "manrope";
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .founder-wrapper {
+    min-height: 580px;
   }
 }
